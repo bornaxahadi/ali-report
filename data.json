@@ -1,0 +1,103 @@
+{
+ "updated": "2026-11-11T08:20:00Z",
+ "meta": {
+  "updated": "2026-11-11T08:20:00Z",
+  "agent": {
+   "en": "First search done: 6 suppliers found in China. Outreach is next.",
+   "fa": "جناب آقای علی، اولین جست‌وجو انجام شد: ۶ فروشنده در چین پیدا کردیم. قدم بعدی تماس با آن‌هاست."
+  }
+ },
+ "suppliers": [
+  {
+   "id": "brabus-jinan",
+   "name": "Shandong Brabus Imp & Exp Co., Ltd.",
+   "city": "Jinan",
+   "type": "independent exporter",
+   "listed_price_usd": "10,000-14,500",
+   "terms": "not stated",
+   "moq": "none",
+   "colors": "Snow White, Atlantis Gray, Time Gray, Magic Black",
+   "trim_match": "2025 Smart Driving 120KM + 2026 trims listed; 55KM Luxury to confirm",
+   "email": "sales03@chinanev.com",
+   "whatsapp": "+86 199 6377 7148",
+   "source": "https://www.nev-in-china.com/byd-seal-05/",
+   "status": "found"
+  },
+  {
+   "id": "bydcarchina-wuxi",
+   "name": "BYD Car China / Marvix Auto (Yiqianru Technical Co.)",
+   "city": "Wuxi",
+   "type": "independent exporter (says not BYD-affiliated)",
+   "listed_price_usd": null,
+   "email": "info@bydcarchina.com",
+   "whatsapp": "+86 159 6153 6612",
+   "phone2": "+86 185 2292 1548",
+   "source": "https://bydcarchina.com/",
+   "status": "found"
+  },
+  {
+   "id": "novoauto-cq",
+   "name": "NovoAuto Automobile Sales Co., Ltd.",
+   "city": "Chongqing",
+   "type": "exporter",
+   "listed_price_usd": "9,400 FOB",
+   "moq": "1",
+   "colors": "Gray listed",
+   "trim_match": "exact: Smart Drive 55km Luxury, new",
+   "lead_time": "15 working days to 1 month",
+   "ports": "Shanghai, Nansha, Khorgos (land to Central Asia)",
+   "contact": "Made-in-China inquiry form only",
+   "source": "https://novoauto.en.made-in-china.com/product/GtCUfarjvvRi/",
+   "status": "found"
+  },
+  {
+   "id": "bofeng-sz",
+   "name": "Bofeng Hechuang (Shenzhen) Technology Development Co., Ltd.",
+   "city": "Shenzhen",
+   "type": "exporter (mainly used cars)",
+   "listed_price_usd": "11,300 (1-9), 11,000 (10+)",
+   "trim_match": "exact: 2025 Smart Drive 55KM Luxury listed; new vs used unclear",
+   "export_volume": ">2,000 units/yr",
+   "contact": "Made-in-China inquiry form only",
+   "source": "https://bfhcauto.en.made-in-china.com/product/ZpTRwGlBbDkY/",
+   "status": "found"
+  },
+  {
+   "id": "changchi-yuncheng",
+   "name": "Yuncheng Changchi Auto Service Co., Ltd.",
+   "city": "Yuncheng, Shanxi",
+   "type": "exporter",
+   "listed_price_usd": null,
+   "trim_match": "55KM Premium/Luxury, markets for taxi",
+   "ports": "Qingdao, Tianjin",
+   "contact": "Made-in-China inquiry form only",
+   "source": "https://changchi-car.en.made-in-china.com/product/NpcYlgAJVWkm/",
+   "status": "found",
+   "notes": {
+    "en": "Listing shows no real price; asking.",
+    "fa": "در آگهی قیمت واقعی نیامده؛ در حال پرسیدن هستیم."
+   }
+  },
+  {
+   "id": "linjiang-kee-hk",
+   "name": "Linjiang Kee Industrial Co., Limited (SellWell Auto)",
+   "city": "Hong Kong",
+   "type": "used/near-new exporter",
+   "listed_price_usd": "10,567 EXW",
+   "trim_match": "exact trim but used (4,000 km, reg. Jul 2025), white",
+   "contact": "site inquiry button only",
+   "source": "https://sellwellauto.com/usedcar/byd-seal-05-dm-i-2025-SWA1624351",
+   "status": "found - used, low priority"
+  }
+ ],
+ "log": [
+  {
+   "date": "2026-11-11T08:20:00Z",
+   "text": {
+    "en": "First supplier search completed.",
+    "fa": "اولین جست‌وجوی فروشندگان انجام شد."
+   }
+  }
+ ],
+ "instructions": []
+}
