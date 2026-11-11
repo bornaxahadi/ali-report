@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>گزارش خرید BYD Seal 05</title>
+<meta name="theme-color" content="#F2F6F5">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F8B8D'/%3E%3Cpath d='M6 19l3-6h12l5 6v4H6z' fill='white'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#F2F6F5; --surface:#FFFFFF; --ink:#12302E; --muted:#5D706D; --line:#DCE5E3;
+  --accent:#0F8B8D; --accent-soft:#DDF0EF; --amber:#B9770E; --amber-soft:#FBEFD9;
+  --red:#B4412F; --red-soft:#F8E3DF; --green:#2E7D4F; --green-soft:#DFF1E6;
+  --road:#2A4644; --r-lg:22px; --r-sm:12px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,system-ui,sans-serif;font-size:16px;line-height:1.75;font-feature-settings:"ss01"}
+.wrap{max-width:620px;margin:0 auto;padding:16px 16px 56px}
+svg.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+button,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 0 18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.brand .logo{width:36px;height:36px;border-radius:11px;background:var(--accent);color:#fff;display:grid;place-items:center}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:13px;line-height:1.3}
+.seg{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{border:0;background:none;padding:4px 14px;border-radius:999px;cursor:pointer;font-size:14px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+
+/* hero */
+.hero{background:var(--surface);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 1px 0 var(--line)}
+.scene{position:relative;height:150px;background:linear-gradient(180deg,#D3ECEA 0%,#EAF5F3 70%,#F6FAF9 100%)}
+.scene .sky{position:absolute;inset:0;width:100%;height:100%}
+.scene .sedan{position:absolute;bottom:6px;inset-inline-start:50%;width:300px;max-width:84%;transform:translateX(-50%)}
+[dir=rtl] .scene .sedan{transform:translateX(50%) scaleX(-1)}
+.scene .tagm{position:absolute;top:12px;inset-inline-start:14px;font-size:12px;font-weight:700;color:var(--road);background:rgba(255,255,255,.75);padding:1px 10px;border-radius:999px;direction:ltr}
+.hbody{padding:16px 18px 18px}
+.hero h1{margin:0;font-size:15px;font-weight:500;color:var(--muted)}
+.count{display:flex;align-items:baseline;gap:10px;margin:0 0 6px}
+.count b{font-size:52px;line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.count span{color:var(--muted)}
+.road{position:relative;height:56px;margin:4px 0 0}
+.road .lane{position:absolute;inset:auto 0 24px 0;height:4px;border-radius:4px;
+  background:repeating-linear-gradient(90deg,#C7D5D2 0 12px,transparent 12px 22px)}
+[dir=rtl] .road .lane{background:repeating-linear-gradient(270deg,#C7D5D2 0 12px,transparent 12px 22px)}
+.road .done{position:absolute;bottom:24px;height:4px;border-radius:4px;background:var(--accent);inset-inline-start:0;width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.road .car{position:absolute;bottom:26px;inset-inline-start:0;transition:inset-inline-start 1.2s cubic-bezier(.2,.8,.2,1);color:var(--accent)}
+.road .car svg{width:40px;height:19px;display:block}
+[dir=rtl] .road .car svg{transform:scaleX(-1)}
+.road .mark{position:absolute;bottom:0;font-size:12px;color:var(--muted);transform:translateX(-50%)}
+[dir=rtl] .road .mark{transform:translateX(50%)}
+.road .mark::before{content:"";position:absolute;bottom:19px;inset-inline-start:50%;width:1px;height:9px;background:#B9C8C5}
+.status{display:flex;gap:10px;align-items:flex-start;margin-top:12px;padding:10px 12px;border-radius:var(--r-sm);background:var(--accent-soft);font-size:15px}
+.pulse{width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:9px;flex:none;box-shadow:0 0 0 0 rgba(15,139,141,.5);animation:p 2.4s infinite}
+@keyframes p{70%{box-shadow:0 0 0 8px rgba(15,139,141,0)}100%{box-shadow:0 0 0 0 rgba(15,139,141,0)}}
+.upd{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* tabs */
+.tabs{position:sticky;top:0;z-index:5;margin:0 -16px 14px;padding:8px 16px;background:rgba(242,246,245,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.tabs div{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:4px}
+.tabs a{display:flex;flex-direction:column;align-items:center;gap:1px;padding:6px 2px 4px;border-radius:12px;font-size:12.5px;color:var(--muted);text-decoration:none;line-height:1.3}
+.tabs a svg{width:19px;height:19px}
+.tabs a[aria-current="true"]{background:var(--accent-soft);color:var(--accent);font-weight:700}
+.tabs .n{font-size:11px;background:var(--accent);color:#fff;border-radius:999px;padding:0 6px;margin-inline-start:3px;font-weight:700}
+section,.hero{scroll-margin-top:84px}
+
+/* stats row */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 28px}
+.stat{background:var(--surface);border-radius:var(--r-sm);padding:12px 12px 10px;display:flex;flex-direction:column;gap:2px;box-shadow:0 1px 0 var(--line)}
+.stat i{width:30px;height:30px;border-radius:9px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:4px}
+.stat i svg{width:17px;height:17px}
+.stat svg{color:var(--accent)}
+.stat b{font-size:22px;font-weight:800;line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+h2{font-size:18px;margin:0 0 10px;font-weight:700;display:flex;align-items:center;gap:8px}
+h2 svg{color:var(--accent)}
+section{margin-bottom:30px}
+
+/* request */
+.req{background:var(--surface);border-radius:var(--r-lg);padding:6px 16px;box-shadow:0 1px 0 var(--line)}
+.req div{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line)}
+.req div:last-child{border:0}
+.req svg{color:var(--accent);margin-top:4px}
+.req small{display:block;color:var(--muted);font-size:13px;line-height:1.4}
+.swatch{display:inline-block;width:13px;height:13px;border-radius:50%;background:#fff;border:1px solid #B9C6C3;vertical-align:-1px;margin-inline-end:6px}
+
+/* filters */
+.filters{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+.filters button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 12px;font-size:14px;white-space:nowrap;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+
+/* suppliers */
+.list{display:flex;flex-direction:column;gap:10px}
+.sup{background:var(--surface);border-radius:var(--r-lg);box-shadow:0 1px 0 var(--line);overflow:hidden}
+.sup>button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;padding:14px 14px;cursor:pointer}
+.sup>button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.av{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:16px;letter-spacing:.02em;position:relative;direction:ltr}
+.av::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.nm{font-weight:700;line-height:1.4;unicode-bidi:plaintext;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.sub{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:4px;line-height:1.5;flex-wrap:wrap}
+.sub svg{width:14px;height:14px}
+.src{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--ink);background:var(--bg);border-radius:6px;padding:0 7px;margin-top:3px;direction:ltr;line-height:1.7}
+.src svg{width:12px;height:12px;color:var(--muted)}
+.side{text-align:end;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.pr{font-weight:800;font-size:15px;unicode-bidi:plaintext;white-space:nowrap;max-width:118px;overflow:hidden;text-overflow:ellipsis}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:1px 9px;border-radius:999px;background:var(--bg);color:var(--muted);white-space:nowrap}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.s-contacted,.s-replied{background:var(--accent-soft);color:var(--accent)}
+.s-quoted,.s-negotiating{background:var(--amber-soft);color:var(--amber)}
+.s-agreed{background:var(--green-soft);color:var(--green)}
+.s-declined{background:var(--red-soft);color:var(--red)}
+.chev{width:16px;height:16px;color:var(--muted);transition:transform .2s}
+.sup.open .chev{transform:rotate(180deg)}
+.det{display:none;padding:12px 16px 16px;font-size:14px;border-top:1px solid var(--line);background:#FBFCFC}
+.sup.open .det{display:block;animation:in .25s ease}
+@keyframes in{from{opacity:0;transform:translateY(-4px)}}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.facts>div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 10px}
+.facts small{display:block;color:var(--muted);font-size:12px;line-height:1.4}
+.facts b{font-weight:500;unicode-bidi:plaintext}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:0 9px;unicode-bidi:plaintext}
+.note{color:var(--muted);margin:0 0 10px}
+.acts{display:flex;flex-wrap:wrap;gap:6px}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:13px;text-decoration:none;color:var(--ink);cursor:pointer}
+.btn svg{width:16px;height:16px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.empty{padding:28px 16px;text-align:center;color:var(--muted)}
+
+/* ask */
+.ask{background:var(--surface);border-radius:var(--r-lg);padding:14px;box-shadow:0 1px 0 var(--line)}
+.ask textarea{width:100%;min-height:96px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--bg);padding:10px 12px;resize:vertical}
+.ask .row{display:flex;gap:8px;margin-top:8px;align-items:center}
+.ask select{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:6px 12px;font-size:14px}
+.ask .btn.primary{padding:7px 18px;font-size:15px}
+.msg{font-size:13px;color:var(--muted);margin:8px 2px 0;min-height:1em}
+
+/* feed */
+.feed{list-style:none;margin:0;padding:0;position:relative}
+#feed{background:var(--surface);border-radius:var(--r-lg);padding:16px 14px 4px;box-shadow:0 1px 0 var(--line)}
+.feed li{display:grid;grid-template-columns:18px 1fr;gap:10px;padding:0 0 14px;position:relative}
+.feed li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent);margin:9px 4px 0}
+.feed li::after{content:"";position:absolute;inset-inline-start:8px;top:22px;bottom:0;width:1px;background:var(--line)}
+.feed li:last-child::after{display:none}
+.feed time{display:block;font-size:12px;color:var(--muted);line-height:1.4}
+footer{text-align:center;font-size:12px;color:var(--muted);margin-top:8px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (min-width:560px){.wrap{padding-top:28px}.count b{font-size:68px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17h14M3 17v-3.5l2.2-4.4A2 2 0 0 1 7 8h8.5a2 2 0 0 1 1.5.7l3 3.3h.5A1.5 1.5 0 0 1 22 13.5V17h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9M3 9h18v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0zM5 13v7h14v-7M10 20v-4h4v4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.3"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></symbol>
+  <symbol id="i-ship" viewBox="0 0 24 24"><path d="M3 15h18l-2.5 5h-13zM6 15V9h12v6M9 9V5h6v4"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 9.5c.5 2.3 2.2 4 4.5 4.5l1-1.2 1.8.7"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 4l9 7M5 10v10h14V10"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-ask" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="logo"><svg class="i"><use href="#i-car"/></svg></span>
+      <div><span data-t="brand"></span><small data-t="brandSub"></small></div></div>
+    <div class="seg" role="group" aria-label="Language">
+      <button type="button" data-lang="fa">فا</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Sections"><div>
+    <a href="#top" data-tab="top"><svg class="i"><use href="#i-home"/></svg><span data-t="tabHome"></span></a>
+    <a href="#supSec" data-tab="supSec"><svg class="i"><use href="#i-store"/></svg><span><span data-t="tabSup"></span><span class="n" id="tabN"></span></span></a>
+    <a href="#askSec" data-tab="askSec"><svg class="i"><use href="#i-ask"/></svg><span data-t="tabAsk"></span></a>
+    <a href="#logSec" data-tab="logSec"><svg class="i"><use href="#i-pulse"/></svg><span data-t="tabLog"></span></a>
+  </div></nav>
+
+  <div class="hero" id="top">
+    <div class="scene" aria-hidden="true">
+      <svg class="sky" viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice">
+        <g fill="#C3DEDB"><rect x="8" y="70" width="26" height="64"/><rect x="38" y="52" width="20" height="82"/><rect x="62" y="84" width="30" height="50"/><rect x="300" y="60" width="22" height="74"/><rect x="326" y="80" width="30" height="54"/><rect x="360" y="46" width="24" height="88"/><rect x="96" y="96" width="18" height="38"/><rect x="276" y="92" width="20" height="42"/></g>
+        <g fill="#B2D4D0"><rect x="44" y="40" width="8" height="12"/><rect x="366" y="34" width="10" height="12"/></g>
+        <rect x="0" y="132" width="400" height="18" fill="#DCE7E5"/>
+        <g fill="#fff"><rect x="20" y="140" width="34" height="3" rx="1.5"/><rect x="90" y="140" width="34" height="3" rx="1.5"/><rect x="160" y="140" width="34" height="3" rx="1.5"/><rect x="230" y="140" width="34" height="3" rx="1.5"/><rect x="300" y="140" width="34" height="3" rx="1.5"/><rect x="370" y="140" width="34" height="3" rx="1.5"/></g>
+      </svg>
+      <svg class="sedan" viewBox="0 0 360 124">
+        <ellipse cx="182" cy="114" rx="160" ry="7" fill="#12302E" opacity=".14"/>
+        <path d="M24 96c-5-10-3-22 8-27l36-9c22-17 52-28 92-30 36-2 66 4 92 21l18 10c26 2 46 6 60 12 10 4 13 14 10 24l-4 5H28z" fill="#FFFFFF" stroke="#B9C9C6" stroke-width="1.5"/>
+        <path d="M84 60c22-15 48-23 80-24 32-1 58 4 80 18l9 7H86z" fill="#24403E"/>
+        <path d="M168 37l3 24" stroke="#fff" stroke-width="5"/>
+        <path d="M100 58c18-11 38-16 62-17l2 15z" fill="#3E5F5C" opacity=".55"/>
+        <path d="M40 80c90-6 190-8 300 0" stroke="#DCE5E3" stroke-width="2" fill="none"/>
+        <path d="M172 62l2 34" stroke="#D3DEDB" stroke-width="1.5"/>
+        <rect x="140" y="70" width="14" height="3" rx="1.5" fill="#C3D1CE"/><rect x="212" y="70" width="14" height="3" rx="1.5" fill="#C3D1CE"/>
+        <path d="M250 60l12 2-2 5-11-2z" fill="#24403E"/>
+        <path d="M312 70l26 6-3 4-25-5z" fill="#9FE3E6"/>
+        <path d="M27 72l26-7v4l-25 8z" fill="#C8473A"/>
+        <path d="M300 98h44" stroke="#C3D1CE" stroke-width="2"/>
+        <circle cx="90" cy="96" r="23" fill="#1C2E2C"/><circle cx="270" cy="96" r="23" fill="#1C2E2C"/>
+        <g><circle cx="90" cy="96" r="18" fill="#2B3B39"/><circle cx="90" cy="96" r="11" fill="#D7E0DE"/><circle cx="90" cy="96" r="4" fill="#8FA19E"/>
+           <path d="M90 85v22M79 96h22M82 88l16 16M98 88l-16 16" stroke="#AFBDBA" stroke-width="1.5"/></g>
+        <g><circle cx="270" cy="96" r="18" fill="#2B3B39"/><circle cx="270" cy="96" r="11" fill="#D7E0DE"/><circle cx="270" cy="96" r="4" fill="#8FA19E"/>
+           <path d="M270 85v22M259 96h22M262 88l16 16M278 88l-16 16" stroke="#AFBDBA" stroke-width="1.5"/></g>
+      </svg>
+      <span class="tagm">BYD Seal 05 DM-i</span>
+    </div>
+    <div class="hbody">
+    <h1 data-t="heroLabel"></h1>
+    <div class="count"><b id="units">–</b><span id="unitsOf"></span></div>
+    <div class="road" id="road" aria-hidden="true">
+      <div class="lane"></div><div class="done" id="done"></div>
+      <div class="car" id="car"><svg viewBox="0 0 46 22"><path d="M3 16v-4l5-6c1-1 2-1.5 3.5-1.5H28c1.3 0 2.4.5 3.3 1.4L36 10l6 1.3c1.3.3 2 1.2 2 2.4V16z" fill="currentColor"/><path d="M12 6h8v4h-11zM22 6h6l4 4H22z" fill="#fff" opacity=".7"/><circle cx="11" cy="16.5" r="3.5" fill="#12302E" stroke="#fff" stroke-width="1.5"/><circle cx="35" cy="16.5" r="3.5" fill="#12302E" stroke="#fff" stroke-width="1.5"/></svg></div>
+      <div id="marks"></div>
+    </div>
+    <div class="status"><span class="pulse"></span><div><div id="agentText"></div><div class="upd" id="updated"></div></div></div>
+    </div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <section>
+    <h2><svg class="i"><use href="#i-sliders"/></svg><span data-t="wanted"></span></h2>
+    <div class="req">
+      <div><svg class="i"><use href="#i-car"/></svg><p style="margin:0"><small data-t="model"></small><span data-t="modelV"></span></p></div>
+      <div><svg class="i"><use href="#i-tag"/></svg><p style="margin:0"><small data-t="spec"></small><span class="swatch"></span><span data-t="specV"></span></p></div>
+      <div><svg class="i"><use href="#i-box"/></svg><p style="margin:0"><small data-t="qty"></small><span data-t="qtyV"></span></p></div>
+      <div><svg class="i"><use href="#i-ship"/></svg><p style="margin:0"><small data-t="delivery"></small><span data-t="deliveryV"></span></p></div>
+    </div>
+  </section>
+
+  <section id="supSec">
+    <h2><svg class="i"><use href="#i-store"/></svg><span data-t="suppliers"></span></h2>
+    <div class="filters" id="filters"></div>
+    <div class="list" id="suppliers"></div>
+  </section>
+
+  <section id="askSec">
+    <h2><svg class="i"><use href="#i-ask"/></svg><span data-t="tell"></span></h2>
+    <div class="ask">
+      <label for="askText" class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)" data-t="tell"></label>
+      <textarea id="askText" maxlength="2000"></textarea>
+      <div class="row"><select id="askSup" aria-label="Supplier"></select>
+        <button type="button" class="btn primary" id="askSend"><svg class="i"><use href="#i-send"/></svg><span data-t="send"></span></button></div>
+      <p class="msg" id="askMsg" role="status"></p>
+    </div>
+  </section>
+
+  <section id="logSec">
+    <h2><svg class="i"><use href="#i-pulse"/></svg><span data-t="activity"></span></h2>
+    <ul class="feed" id="feed"></ul>
+  </section>
+  <footer data-t="foot"></footer>
+</div>
+
+<script>
+const T = {
+  fa:{brand:"گزارش خرید خودرو",brandSub:"برای آقای علی",heroLabel:"خودروی پیدا‌شده تا امروز",of:n=>`از هدف ${n} دستگاه`,
+    wanted:"سفارش ما",model:"مدل",modelV:"BYD Seal 05 DM-i هیبرید شارژی. اولویت: ۲۰۲۵ اسمارت درایو ۵۵ کیلومتر لاکچری. جایگزین: ۲۰۲۶ با برد ۱۲۸ کیلومتر.",
+    spec:"مشخصات",specV:"نو، سفید، فرمان چپ",qty:"تعداد",qtyV:"هر تعداد موجود از ۱۵۰ به بالا؛ هدف نهایی ۱۰٬۰۰۰",
+    delivery:"تحویل",deliveryV:"خریدار در چین تحویل می‌گیرد (EXW یا FOB)",
+    agentIdle:"داریم برای شما فروشنده پیدا می‌کنیم.",updated:"به‌روزرسانی",
+    st:{found:"فروشنده",contacted:"تماس گرفته‌شده",quoted:"پیشنهاد قیمت"},
+    suppliers:"فروشندگان",tell:"دستور شما به ایجنت",activity:"کارهای ایجنت",all:"همه",
+    status:{found:"پیدا شد",contacted:"تماس گرفته شد",replied:"پاسخ داد",quoted:"پیشنهاد داد",negotiating:"در حال مذاکره",agreed:"توافق شد",declined:"موجود ندارد"},
+    kind:{byd:"کارخانهٔ BYD",dealer:"نمایندگی",exporter:"صادرکننده",other:"فروشنده"},
+    units:"موجودی",price:"قیمت هر دستگاه",option:"نسخه",moq:"حداقل سفارش",lead:"زمان تحویل",colors:"رنگ‌ها",
+    unknown:"نامشخص",askPrice:"قیمت؟",lastContact:"آخرین تماس",
+    open:"صفحهٔ فروشنده",mail:"ایمیل",wa:"واتس‌اپ",ask:"دستور دربارهٔ این",
+    send:"ارسال",placeholder:"مثلاً: از NovoAuto برای ۳۰۰ دستگاه سفید قیمت FOB بگیر.",anySup:"همهٔ فروشندگان",
+    sentGh:"صفحهٔ GitHub با پیام شما باز شد. لطفاً آنجا دکمهٔ «Submit new issue» را بزنید تا دستورتان به ما برسد.",
+    loadFail:"ببخشید، گزارش باز نشد. لطفاً صفحه را یک بار دیگر باز کنید.",
+    inst:{new:"در انتظار",seen:"ایجنت خواند",done:"انجام شد"},agentReply:"ایجنت:",
+    noSup:"هنوز فروشنده‌ای پیدا نشده. ایجنت در حال جست‌وجوست.",noSupF:"فروشنده‌ای با این وضعیت نیست.",noLog:"هنوز کاری ثبت نشده.",
+    loading:"در حال بارگیری…",tabHome:"نمای کلی",tabSup:"فروشندگان",tabAsk:"دستور",tabLog:"فعالیت",foot:"هر چند ساعت خودکار به‌روز می‌شود"},
+  en:{brand:"Car purchase report",brandSub:"For Mr. Ali",heroLabel:"Cars found so far",of:n=>`of a ${n}-car target`,
+    wanted:"Our order",model:"Model",modelV:"BYD Seal 05 DM-i plug-in hybrid. First choice: 2025 Smart Driving 55KM Luxury. Fallback: 2026 with 128 km range.",
+    spec:"Spec",specV:"New, white, left-hand drive",qty:"Quantity",qtyV:"Any stock from 150 up; final target 10,000",
+    delivery:"Delivery",deliveryV:"Buyer collects in China (EXW or FOB)",
+    agentIdle:"The agent is searching for suppliers.",updated:"Updated",
+    st:{found:"Suppliers",contacted:"Contacted",quoted:"Price offers"},
+    suppliers:"Suppliers",tell:"Tell the agent what to do",activity:"Agent activity",all:"All",
+    status:{found:"Found",contacted:"Contacted",replied:"Replied",quoted:"Offer",negotiating:"Negotiating",agreed:"Agreed",declined:"No stock"},
+    kind:{byd:"BYD factory",dealer:"Dealer",exporter:"Exporter",other:"Seller"},
+    units:"In stock",price:"Price per car",option:"Version",moq:"Minimum order",lead:"Lead time",colors:"Colors",
+    unknown:"Not known yet",askPrice:"Price?",lastContact:"Last contact",
+    open:"Supplier page",mail:"Email",wa:"WhatsApp",ask:"Instruct about this",
+    send:"Send",placeholder:"For example: Ask NovoAuto for a FOB price on 300 white cars.",anySup:"All suppliers",
+    sentGh:"A GitHub page opened with your message. Press “Submit new issue” there and the agent will pick it up.",
+    loadFail:"The report did not load. Reload the page.",
+    inst:{new:"Waiting",seen:"Agent read it",done:"Done"},agentReply:"Agent:",
+    noSup:"No suppliers yet. The agent is still searching.",noSupF:"No suppliers with this status.",noLog:"Nothing logged yet.",
+    loading:"Loading…",tabHome:"Overview",tabSup:"Suppliers",tabAsk:"Instruct",tabLog:"Activity",foot:"Updates automatically every few hours"}
+};
+const REPO = "bornaxahadi/ali-report", TARGET = 10000, MARKS = [150,500,2000,10000];
+const ORDER = ["agreed","negotiating","quoted","replied","contacted","found","declined"];
+const S = {lang:"fa", filter:"all", open:new Set(), suppliers:null, meta:null, log:[], inst:[], msg:"", loadFail:false};
+try { S.lang = localStorage.getItem("lang") || "fa"; } catch(e){}
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pick = v => v == null ? "" : typeof v === "object" ? (v[S.lang] || v.en || v.fa || "") : String(v);
+const loc = () => S.lang === "fa" ? "fa-IR" : "en-US";
+const num = n => Number(n).toLocaleString(loc());
+const digits = s => S.lang === "fa" ? String(s).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]) : String(s);
+const icon = (n, cls="i") => `<svg class="${cls}"><use href="#i-${n}"/></svg>`;
+function fmtDate(s, time){
+  if(!s) return "";
+  const d = new Date(String(s).length === 10 ? s + "T12:00:00Z" : s);
+  if(isNaN(d)) return esc(s);
+  return d.toLocaleString(S.lang === "fa" ? "fa-IR" : "en-GB", time ? {dateStyle:"medium",timeStyle:"short"} : {month:"short",day:"numeric"});
+}
+function money(p){
+  if(!p || p.amount == null) return "";
+  let s; try { s = Number(p.amount).toLocaleString(loc(), {style:"currency",currency:p.currency||"USD",maximumFractionDigits:0}); }
+  catch(e){ s = num(p.amount) + " " + (p.currency||""); }
+  return s + (p.basis ? " " + p.basis : "");
+}
+function safeUrl(u){ try{ const x = new URL(u); return /^(https?|mailto|tel):$/.test(x.protocol) ? x.href : ""; }catch(e){ return ""; } }
+function norm(id, d){
+  const s = {id, ...d};
+  const st = String(s.status||"found").toLowerCase();
+  s.status = ORDER.find(o => st.startsWith(o)) || (st.startsWith("offer")?"quoted":st.startsWith("no")||st.startsWith("reject")?"declined":"found");
+  if(!s.kind){ const ty = String(s.type||"").toLowerCase();
+    s.kind = /dealer|4s/.test(ty) ? "dealer" : /export/.test(ty) ? "exporter" : /^byd|factory/.test(ty) ? "byd" : "other"; }
+  if(s.units == null && s.qty_available != null) s.units = s.qty_available;
+  if(typeof s.units === "string" && /^\d[\d,]*$/.test(s.units)) s.units = Number(s.units.replace(/,/g,""));
+  if(!s.price){
+    if(s.price_quoted_usd != null && s.price_quoted_usd !== "") s.price = {amount:Number(String(s.price_quoted_usd).replace(/[^\d.]/g,""))||null, currency:"USD", basis:s.incoterm||""};
+    else if(s.listed_price_usd){ const lp = String(s.listed_price_usd).replace(/^\$/,""); if(!/placeholder|n\/a|unknown/i.test(lp)){ const lp2 = lp.split(/\s*\(/)[0].trim(); s.priceText = /^\d/.test(lp2) ? "$" + lp2 : lp2; } }
+  }
+  if(typeof s.colors === "string") s.colors = s.colors.split(/[,،]/).map(x=>x.trim()).filter(Boolean);
+  if(!s.trim && s.trim_match) s.trim = s.trim_match;
+  if(!s.contact_url) s.contact_url = s.source || "";
+  return s;
+}
+const HUES = [["#DDF0EF","#0F7173"],["#FBEFD9","#9A6209"],["#E4E8FA","#3B4FA8"],["#F8E3DF","#A63A2A"],["#DFF1E6","#2B6E45"],["#EFE3F5","#7A3E96"]];
+const hue = id => { let h = 0; for(const c of String(id)) h = (h*31 + c.charCodeAt(0)) >>> 0; return HUES[h % HUES.length]; };
+function platform(u){
+  let h = ""; try{ h = new URL(u).hostname.replace(/^www\./,""); }catch(e){ return ""; }
+  if(/made-in-china\.com$/.test(h)) return "Made-in-China.com";
+  if(/alibaba\.com$/.test(h)) return "Alibaba";
+  return h;
+}
+const initials = n => String(n||"?").replace(/[^A-Za-z؀-ۿ ]/g,"").trim().split(/\s+/).slice(0,2).map(w=>w[0]).join("").toUpperCase() || "?";
+
+function render(){
+  const t = T[S.lang];
+  document.documentElement.lang = S.lang;
+  document.documentElement.dir = S.lang === "fa" ? "rtl" : "ltr";
+  document.title = S.lang === "fa" ? "گزارش خرید BYD Seal 05" : "BYD Seal 05 purchase report";
+  document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === S.lang));
+  document.querySelectorAll("[data-t]").forEach(el => el.textContent = t[el.dataset.t]);
+  $("askText").placeholder = t.placeholder;
+
+  const sup = S.suppliers || [];
+  const units = sup.filter(s => s.status !== "declined").reduce((a,s) => a + (Number(s.units)||0), 0);
+  $("units").textContent = S.suppliers === null ? "–" : num(units);
+  $("unitsOf").textContent = t.of(num(TARGET));
+  // road: log scale so 150 and 500 are visible next to 10,000
+  const pos = v => v <= 0 ? 0 : Math.min(1, Math.log10(1 + v) / Math.log10(1 + TARGET));
+  const p = pos(units) * 100;
+  $("done").style.width = p + "%";
+  $("car").style.insetInlineStart = `calc(${p}% - ${p > 6 ? 46 : 0}px)`;
+  $("marks").innerHTML = MARKS.map(m => `<span class="mark" style="inset-inline-start:${pos(m)*100}%;${m===TARGET?"transform:none;inset-inline-start:auto;inset-inline-end:0":""}">${num(m)}</span>`).join("");
+
+  $("agentText").textContent = S.loadFail ? t.loadFail : (pick(S.meta && S.meta.agent) || t.agentIdle);
+  const upd = S.meta && S.meta.updated;
+  $("updated").textContent = upd ? `${t.updated}: ${fmtDate(upd, true)}` : "";
+
+  const contacted = sup.filter(s => s.status !== "found").length;
+  const quoted = sup.filter(s => ["quoted","negotiating","agreed"].includes(s.status)).length;
+  $("stats").innerHTML = [["store",sup.length,t.st.found],["chat",contacted,t.st.contacted],["tag",quoted,t.st.quoted]]
+    .map(([ic,v,l]) => `<div class="stat"><i>${icon(ic)}</i><b>${num(v)}</b><span>${l}</span></div>`).join("");
+
+  const cnt = st => sup.filter(s => s.status === st).length;
+  const present = ORDER.filter(st => cnt(st));
+  if(S.filter !== "all" && !present.includes(S.filter)) S.filter = "all";
+  $("filters").innerHTML = present.length > 1 ? ["all", ...present].map(f =>
+    `<button type="button" data-f="${f}" aria-pressed="${S.filter===f}">${f==="all"?t.all:t.status[f]} ${num(f==="all"?sup.length:cnt(f))}</button>`).join("") : "";
+
+  const pval = s => (s.price && s.price.amount) || parseFloat(String(s.priceText||"").replace(/[^\d.]/g,"")) || Infinity;
+  const list = sup.filter(s => S.filter === "all" || s.status === S.filter)
+    .sort((a,b) => (ORDER.indexOf(a.status) - ORDER.indexOf(b.status)) || (pval(a) - pval(b)));
+  $("suppliers").innerHTML = S.suppliers === null ? `<div class="empty">${t.loading}</div>`
+    : !list.length ? `<div class="empty">${sup.length ? t.noSupF : t.noSup}</div>`
+    : list.map(s => {
+      const open = S.open.has(s.id);
+      const price = money(s.price) || s.priceText || "";
+      const url = safeUrl(s.contact_url||"");
+      const wa = s.whatsapp ? "https://wa.me/" + String(s.whatsapp).replace(/\D/g,"") : "";
+      const mail = s.email && /^[^@\s]+@[^@\s]+$/.test(s.email) ? "mailto:" + s.email : "";
+      const facts = [[t.units, s.units!=null&&s.units!==""?num(s.units):t.unknown],[t.price, price||t.unknown],
+        [t.moq, s.moq||""],[t.lead, s.lead_time||""]].filter(f => f[1]);
+      const colors = (s.colors||[]).map(c => `<span class="chip">${esc(pick(c))}</span>`).join("");
+      const tl = (s.timeline||[]).slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+      return `<div class="sup ${open?"open":""}">
+        <button type="button" data-id="${esc(s.id)}" aria-expanded="${open}">
+          <span class="av" aria-hidden="true" style="background:${hue(s.id)[0]};color:${hue(s.id)[1]}">${esc(initials(s.name))}</span>
+          <span style="min-width:0"><span class="nm">${esc(pick(s.name))}</span>
+            <span class="sub">${icon("pin")}${esc(pick(s.city)||"")}<span aria-hidden="true">•</span>${esc(t.kind[s.kind])}</span>
+            ${platform(s.source||s.contact_url)?`<span class="src">${icon("globe")}${esc(platform(s.source||s.contact_url))}</span>`:""}</span>
+          <span class="side"><span class="pr">${esc(price) || `<span style="color:var(--muted);font-weight:400;font-size:13px">${t.askPrice}</span>`}</span>
+            <span class="pill s-${esc(s.status)}">${t.status[s.status]}</span>${icon("down","i chev")}</span>
+        </button>
+        <div class="det">
+          <div class="facts">${facts.map(f=>`<div><small>${f[0]}</small><b>${esc(f[1])}</b></div>`).join("")}</div>
+          ${s.trim?`<p class="note"><b style="color:var(--ink);font-weight:500">${t.option}:</b> <span style="unicode-bidi:plaintext">${esc(pick(s.trim))}</span></p>`:""}
+          ${colors?`<div class="chips">${colors}</div>`:""}
+          ${pick(s.next)?`<p class="note">${esc(pick(s.next))}</p>`:""}
+          ${pick(s.notes)?`<p class="note">${esc(pick(s.notes))}</p>`:""}
+          ${tl.length?`<ul class="feed" style="margin-bottom:8px">${tl.map(e=>`<li><span><time>${fmtDate(e.date)}</time>${esc(e[S.lang]||e.en||e.fa||e.text)}</span></li>`).join("")}</ul>`:""}
+          <div class="acts">
+            ${wa?`<a class="btn" href="${esc(wa)}" target="_blank" rel="noopener">${icon("wa")}${t.wa}</a>`:""}
+            ${mail?`<a class="btn" href="${esc(mail)}">${icon("mail")}${t.mail}</a>`:""}
+            ${url?`<a class="btn" href="${esc(url)}" target="_blank" rel="noopener">${icon("link")}${t.open}</a>`:""}
+            <button class="btn primary" type="button" data-ask="${esc(s.id)}">${icon("ask")}${t.ask}</button>
+          </div>
+        </div></div>`;
+    }).join("");
+
+  const sel = $("askSup"), cur = sel.value;
+  sel.innerHTML = `<option value="">${t.anySup}</option>` + sup.map(s => `<option value="${esc(s.id)}">${esc(pick(s.name))}</option>`).join("");
+  sel.value = sup.some(s => s.id === cur) ? cur : "";
+  $("tabN").textContent = sup.length ? num(sup.length) : "";
+  $("askMsg").textContent = S.msg ? t[S.msg] : "";
+
+  const items = [...S.inst.map(i => ({date:i.createdAt, html:`<b>${esc(i.text)}</b>${pick(i.reply)?`<br><span style="color:var(--muted)">${t.agentReply} ${esc(pick(i.reply))}</span>`:""}`})),
+                 ...S.log.map(a => ({date:a.date, html:esc(pick(a.text))}))].sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  $("feed").innerHTML = items.length ? items.map(a => `<li><span><time>${fmtDate(a.date, true)}</time>${a.html}</span></li>`).join("")
+    : `<li style="display:block;color:var(--muted)">${t.noLog}</li>`;
+}
+
+async function load(){
+  try{
+    const r = await fetch("data.json?t=" + Date.now(), {cache:"no-store"});
+    if(!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    S.suppliers = (d.suppliers||[]).map(x => norm(x.id, x));
+    S.meta = d.meta || {updated:d.updated};
+    S.log = d.log || []; S.inst = d.instructions || []; S.loadFail = false;
+  }catch(e){ if(S.suppliers === null) S.suppliers = []; S.loadFail = true; }
+  render();
+}
+function send(){
+  const text = $("askText").value.trim();
+  if(!text){ $("askText").focus(); return; }
+  const sid = $("askSup").value, sup = (S.suppliers||[]).find(x => x.id === sid);
+  const title = "دستور / Instruction: " + text.replace(/\s+/g," ").slice(0,60);
+  const body = text + (sup ? "\n\nSupplier: " + pick(sup.name) + " (" + sid + ")" : "") + "\n\nLanguage: " + S.lang;
+  window.open(`https://github.com/${REPO}/issues/new?labels=instruction&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
+  S.msg = "sentGh"; $("askText").value = ""; render();
+}
+document.addEventListener("click", e => {
+  const lb = e.target.closest("[data-lang]");
+  if(lb){ S.lang = lb.dataset.lang; try{localStorage.setItem("lang",S.lang)}catch(_){} render(); return; }
+  const fb = e.target.closest("[data-f]");
+  if(fb){ S.filter = fb.dataset.f; render(); return; }
+  const ab = e.target.closest("[data-ask]");
+  if(ab){ $("askSup").value = ab.dataset.ask; $("askSec").scrollIntoView({behavior:"smooth",block:"start"}); setTimeout(()=>$("askText").focus({preventScroll:true}),400); return; }
+  if(e.target.closest("#askSend")){ send(); return; }
+  const sb = e.target.closest(".sup>button");
+  if(sb){ const id = sb.dataset.id; S.open.has(id) ? S.open.delete(id) : S.open.add(id); render(); }
+});
+const tabs = [...document.querySelectorAll("[data-tab]")];
+function markTab(){
+  const y = window.scrollY + 120; let cur = "top";
+  for(const a of tabs){ const el = $(a.dataset.tab); if(el && el.offsetTop <= y) cur = a.dataset.tab; }
+  if(window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) cur = tabs[tabs.length-1].dataset.tab;
+  tabs.forEach(a => a.setAttribute("aria-current", a.dataset.tab === cur));
+}
+let pinned = null, pinT;
+addEventListener("scroll", () => { if(!pinned) markTab(); }, {passive:true});
+tabs.forEach(a => a.addEventListener("click", () => { pinned = a.dataset.tab; tabs.forEach(x => x.setAttribute("aria-current", x === a)); clearTimeout(pinT); pinT = setTimeout(() => pinned = null, 1200); }));
+document.documentElement.style.scrollBehavior = matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth";
+render(); markTab(); load(); setInterval(load, 5*60*1000);
+</script>
+</body>
+</html>
