@@ -160,6 +160,32 @@ section,.hero{scroll-margin-top:16px}
 .btn svg{width:16px;height:16px}
 .btn.wa{color:#128C4B;box-shadow:0 0 0 1px #BFE7CF;background:#EFFAF3}
 .btn.primary{background:linear-gradient(135deg,var(--indigo),#4646C2);box-shadow:0 6px 14px -8px rgba(91,91,214,.9);color:#fff}
+.bench{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:16px;margin:14px 0 0;position:relative;overflow:hidden}
+.bench::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:4px;background:linear-gradient(var(--green),var(--teal))}
+.bench .bt{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.bench .bt small{color:var(--muted);font-size:13px}
+.bench .bt b{font-size:26px;font-weight:900;color:var(--green);unicode-bidi:plaintext}
+.bench .rg{font-size:12.5px;color:var(--green);background:var(--green-soft);border-radius:999px;padding:1px 10px;font-weight:700;unicode-bidi:plaintext}
+.bench p{margin:6px 0 0;font-size:13px;color:var(--muted)}
+.scale{position:relative;height:56px;margin:14px 6px 2px;direction:ltr}
+.scale .ln{position:absolute;top:22px;left:0;right:0;height:8px;border-radius:99px;background:var(--line)}
+.scale .ok{position:absolute;top:22px;height:8px;border-radius:99px;background:var(--green-soft);box-shadow:inset 0 0 0 1px #9ED8BC}
+.scale .mk{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;font-size:11px;font-weight:700;white-space:nowrap}
+.scale .mk i{width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.12);margin-top:19px;order:2}
+.scale .mk span{order:1;line-height:1.2}
+.scale .mk em{order:3;font-style:normal;color:var(--muted);font-weight:500;margin-top:1px}
+.legend{display:flex;flex-direction:column;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--muted);margin-top:6px}
+.legend span{display:block}.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-inline-end:6px;vertical-align:middle}
+.rk{position:absolute;top:-6px;inset-inline-start:-6px;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--navy);color:#fff;font-size:11px;font-weight:900;display:grid;place-items:center;box-shadow:0 0 0 2px #fff;direction:ltr}
+.chn{display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;border-radius:6px;padding:0 7px;line-height:1.75}
+.ch-factory{background:var(--green-soft);color:var(--green)} .ch-distributor{background:var(--indigo-soft);color:var(--indigo)}
+.ch-exporter{background:var(--saffron-soft);color:var(--saffron-ink)} .ch-dealer{background:var(--coral-soft);color:var(--coral-ink)} .ch-private{background:var(--line);color:var(--muted)}
+.gap{font-size:11.5px;font-weight:700;unicode-bidi:plaintext;white-space:nowrap}
+.gap.up{color:var(--coral-ink)} .gap.ok{color:var(--green)}
+.sup.target{background:linear-gradient(180deg,#F3FBF7,#fff);box-shadow:0 0 0 2px #9ED8BC inset,var(--shadow)}
+.sup.target .pr{color:var(--green)}
+.tgt{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:700;color:var(--green);border:1.5px dashed var(--green);border-radius:999px;padding:0 8px;white-space:nowrap}
+.stl{display:block;font-size:12px;color:var(--saffron-ink);margin-top:3px}
 .empty{padding:28px 16px;text-align:center;color:var(--muted);background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow)}
 
 /* ask */
@@ -279,6 +305,8 @@ footer{text-align:center;font-size:12px;color:var(--muted);margin-top:8px}
     </div>
   </div>
 
+  <div class="bench" id="bench" hidden></div>
+
   <div class="stats" id="stats"></div>
 
   <section id="ctrySec">
@@ -342,6 +370,7 @@ const T = {
     suppliers:"فروشندگان",tell:"دستور شما به ایجنت",activity:"کارهای ایجنت",all:"همه",
     status:{found:"پیدا شد",contacted:"تماس گرفته شد",replied:"پاسخ داد",quoted:"پیشنهاد داد",negotiating:"در حال مذاکره",agreed:"توافق شد",declined:"موجود ندارد"},
     kind:{byd:"کارخانهٔ BYD",dealer:"نمایندگی",exporter:"صادرکننده",other:"فروشنده"},
+    bTitle:"قیمت هدف هر دستگاه",bRange:(a,b)=>`بازهٔ قابل قبول ${a} تا ${b}`,bTarget:"هدف",bBest:"ارزان‌ترین پیشنهاد واقعی",bDxb:"ارزان‌ترین در دبی",gapUp:n=>`${n} بالاتر از هدف`,gapOk:n=>n?`${n} زیر هدف`:"برابر هدف",targetPill:"قیمت هدف",cheap:"مرتب: ارزان به گران",
     units:"موجودی",price:"قیمت هر دستگاه",option:"نسخه",moq:"حداقل سفارش",lead:"زمان تحویل",colors:"رنگ‌ها",ports:"بندر",
     unknown:"نامشخص",askPrice:"قیمت؟",
     open:"صفحهٔ فروشنده",mail:"ایمیل",wa:"واتس‌اپ",ask:"دستور دربارهٔ این",
@@ -362,6 +391,7 @@ const T = {
     suppliers:"Suppliers",tell:"Tell the agent what to do",activity:"Agent activity",all:"All",
     status:{found:"Found",contacted:"Contacted",replied:"Replied",quoted:"Offer",negotiating:"Negotiating",agreed:"Agreed",declined:"No stock"},
     kind:{byd:"BYD factory",dealer:"Dealer",exporter:"Exporter",other:"Seller"},
+    bTitle:"Target price per car",bRange:(a,b)=>`Acceptable range ${a} to ${b}`,bTarget:"Target",bBest:"Cheapest real offer",bDxb:"Cheapest in Dubai",gapUp:n=>`${n} above target`,gapOk:n=>n?`${n} below target`:"At target",targetPill:"Target price",cheap:"Sorted: cheapest first",
     units:"In stock",price:"Price per car",option:"Version",moq:"Minimum order",lead:"Lead time",colors:"Colors",ports:"Ports",
     unknown:"Not known yet",askPrice:"Price?",
     open:"Supplier page",mail:"Email",wa:"WhatsApp",ask:"Instruct about this",
@@ -404,7 +434,7 @@ const flag = (c, w=24, h=16) => FLAGS[c] ? `<svg class="flag" viewBox="0 0 30 20
 const REPO = "bornaxahadi/ali-report", TARGET = 10000, MARKS = [150,500,2000,10000];
 const ORDER = ["agreed","negotiating","quoted","replied","contacted","found","declined"];
 const ST_COLOR = {agreed:"var(--green)",negotiating:"var(--saffron)",quoted:"var(--saffron)",replied:"var(--indigo)",contacted:"var(--indigo)",found:"var(--teal)",declined:"var(--coral)"};
-const S = {lang:"fa", filter:"all", country:"all", open:new Set(), suppliers:null, meta:null, log:[], inst:[], msg:"", loadFail:false};
+const S = {lang:"fa", filter:"all", country:"all", open:new Set(), suppliers:null, meta:null, bench:null, log:[], inst:[], msg:"", loadFail:false};
 try { S.lang = localStorage.getItem("lang") || "fa"; } catch(e){}
 
 const $ = id => document.getElementById(id);
@@ -452,6 +482,8 @@ function norm(id, d){
   if(typeof s.colors === "string") s.colors = s.colors.split(/[,،]/).map(x=>x.trim()).filter(Boolean);
   if(!s.trim && s.trim_match) s.trim = s.trim_match;
   if(!s.contact_url) s.contact_url = s.source || "";
+  s.up = s.unit_price_usd != null && s.unit_price_usd !== "" ? Number(s.unit_price_usd) : null;
+  s.isTarget = /target/i.test(String(d.status||"") + " " + pick(d.status_label && d.status_label.en || ""));
   s.cc = country(s);
   return s;
 }
@@ -496,6 +528,23 @@ function render(){
   const upd = S.meta && S.meta.updated;
   $("updated").textContent = upd ? `${t.updated}: ${fmtDate(upd, true)}` : "";
 
+  const B = S.bench, bel = $("bench");
+  if(B && B.target_usd){
+    const usd = n => { try { return Number(n).toLocaleString(loc(), {style:"currency",currency:"USD",maximumFractionDigits:0}); } catch(e){ return "$" + num(n); } };
+    const real = sup.filter(s => s.up != null && !s.isTarget).sort((a,b) => a.up - b.up);
+    const best = real[0], dxb = real.find(s => s.cc === "AE");
+    const [r0, r1] = B.range_usd || [B.target_usd, B.target_usd];
+    const lo = Math.min(r0, B.target_usd) - 500, hi = Math.max(r1, ...(dxb ? [dxb.up] : []), ...(best ? [best.up] : [])) + 800;
+    const x = v => ((Math.min(hi, Math.max(lo, v)) - lo) / (hi - lo) * 100).toFixed(1);
+    const mk = (v, color, label, sub) => `<div class="mk" style="left:${x(v)}%;color:${color}"><span>${label||"&nbsp;"}</span><i style="background:${color}"></i><em>${usd(v)}</em></div>`;
+    bel.hidden = false;
+    bel.innerHTML = `<div class="bt"><small>${t.bTitle}</small><b>${usd(B.target_usd)}</b>${B.range_usd?`<span class="rg">${t.bRange(usd(r0), usd(r1))}</span>`:""}</div>
+      <div class="scale" role="img" aria-label="${esc(t.bTitle)}"><div class="ln"></div><div class="ok" style="left:${x(r0)}%;width:${x(r1)-x(r0)}%"></div>
+        ${mk(B.target_usd,"var(--green)",t.bTarget)}${best?mk(best.up,"var(--saffron-ink)",""):""}${dxb&&dxb!==best?mk(dxb.up,"var(--coral-ink)",""):""}</div>
+      ${pick(B.basis)?`<p>${esc(pick(B.basis))}</p>`:""}
+      <div class="legend">${best?`<span><i style="background:var(--saffron)"></i><b>${t.bBest}:</b> <bdi>${esc(pick(best.name))}</bdi>${best.cc?" · "+esc(cname(best.cc)):""}</span>`:""}${dxb&&dxb!==best?`<span><i style="background:var(--coral)"></i><b>${t.bDxb}:</b> <bdi>${esc(pick(dxb.name))}</bdi></span>`:""}</div>`;
+  } else { bel.hidden = true; }
+
   // countries
   const byC = {}; sup.forEach(s => { byC[s.cc||"?"] = (byC[s.cc||"?"]||0) + 1; });
   const searchList = [...new Set([...(S.meta && S.meta.countries || SEARCH), ...Object.keys(byC).filter(c => c !== "?")])];
@@ -527,29 +576,34 @@ function render(){
 
   const pval = s => (s.price && s.price.amount) || parseFloat(String(s.priceText||"").replace(/[^\d.]/g,"")) || Infinity;
   const list = sup.filter(s => (S.filter === "all" || s.status === S.filter) && (S.country === "all" || s.cc === S.country))
-    .sort((a,b) => (ORDER.indexOf(a.status) - ORDER.indexOf(b.status)) || (pval(a) - pval(b)));
-  $("supN").textContent = S.suppliers ? num(list.length) : "";
+    .map((s,i) => [s,i]).sort((x,y) => { const a = x[0], b = y[0]; const ua = a.up ?? (sup.some(z=>z.up!=null) ? Infinity : pval(a)), ub = b.up ?? (sup.some(z=>z.up!=null) ? Infinity : pval(b)); return (ua - ub) || (x[1] - y[1]); }).map(x => x[0]);
+  $("supN").textContent = S.suppliers ? num(list.length) + (sup.some(z=>z.up!=null) ? " · " + t.cheap : "") : "";
   $("suppliers").innerHTML = S.suppliers === null ? `<div class="empty">${t.loading}</div>`
     : !list.length ? `<div class="empty">${sup.length ? t.noSupF : t.noSup}</div>`
     : list.map(s => {
       const open = S.open.has(s.id);
-      const price = money(s.price) || s.priceText || "";
+      const usd = n => { try { return Number(n).toLocaleString(loc(), {style:"currency",currency:"USD",maximumFractionDigits:0}); } catch(e){ return "$" + num(n); } };
+      const price = s.up != null ? usd(s.up) : (money(s.price) || s.priceText || "");
+      const gapV = s.vs_target_usd != null ? Number(s.vs_target_usd) : (s.up != null && S.bench ? s.up - S.bench.target_usd : null);
+      const gap = s.isTarget || gapV == null ? "" : gapV > 0 ? `<span class="gap up">${t.gapUp(usd(gapV))}</span>` : `<span class="gap ok">${t.gapOk(gapV ? usd(-gapV) : 0)}</span>`;
+      const factPrice = money(s.price) || price;
       const url = safeUrl(s.contact_url||"");
       const wa = s.whatsapp ? "https://wa.me/" + String(s.whatsapp).replace(/\D/g,"") : "";
       const mail = s.email && /^[^@\s]+@[^@\s]+$/.test(s.email) ? "mailto:" + s.email : "";
-      const facts = [[t.units, s.units!=null&&s.units!==""?num(s.units):t.unknown],[t.price, price||t.unknown],
+      const facts = [[t.units, s.units!=null&&s.units!==""?num(s.units):t.unknown],[t.price, factPrice||t.unknown],
         [t.moq, s.moq||""],[t.lead, s.lead_time||""],[t.ports, s.ports||""]].filter(f => f[1]);
       const colors = (s.colors||[]).map(c => `<span class="chip"><i style="background:${swatch(pick(c))}"></i>${esc(pick(c))}</span>`).join("");
       const tl = (s.timeline||[]).slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
       const where = [pick(s.city), s.cc && !new RegExp(cname(s.cc),"i").test(pick(s.city)) ? cname(s.cc) : ""].filter(Boolean).join("، ");
-      return `<div class="sup ${open?"open":""}" style="--st:${ST_COLOR[s.status]}">
+      return `<div class="sup ${open?"open":""} ${s.isTarget?"target":""}" style="--st:${ST_COLOR[s.status]}">
         <button type="button" data-id="${esc(s.id)}" aria-expanded="${open}">
-          <span class="av" aria-hidden="true" style="background:${grad(s.id)}">${esc(initials(pick(s.name)))}${s.cc?flag(s.cc,22,15):""}</span>
+          <span class="av" aria-hidden="true" style="background:${grad(s.id)}">${esc(initials(pick(s.name)))}${s.cc?flag(s.cc,22,15):""}${s.rank?`<span class="rk">${num(s.rank)}</span>`:""}</span>
           <span style="min-width:0"><span class="nm">${esc(pick(s.name))}</span>
-            <span class="sub">${icon("pin")}${esc(where)}<span aria-hidden="true">•</span>${esc(t.kind[s.kind])}</span>
+            <span class="sub">${icon("pin")}${esc(where)}<span aria-hidden="true">•</span>${pick(s.channel_label)?`<span class="chn ch-${esc(s.channel||"")}">${esc(pick(s.channel_label))}</span>`:esc(t.kind[s.kind])}</span>
+            ${pick(s.status_label)?`<span class="stl">${esc(pick(s.status_label))}</span>`:""}
             ${platform(s.source||s.contact_url)?`<span class="src">${icon("globe")}${esc(platform(s.source||s.contact_url))}</span>`:""}</span>
-          <span class="side">${price?`<span class="pr">${esc(price)}</span>`:`<span class="pr ask">${t.askPrice}</span>`}
-            <span class="pill s-${esc(s.status)}">${t.status[s.status]}</span>${icon("down","i chev")}</span>
+          <span class="side">${price?`<span class="pr">${s.isTarget?"≈ ":""}${esc(price)}</span>`:`<span class="pr ask">${t.askPrice}</span>`}${gap}
+            ${s.isTarget?`<span class="tgt">${t.targetPill}</span>`:`<span class="pill s-${esc(s.status)}">${t.status[s.status]}</span>`}${icon("down","i chev")}</span>
         </button>
         <div class="det">
           <div class="facts">${facts.map(f=>`<div><small>${f[0]}</small><b>${esc(f[1])}</b></div>`).join("")}</div>
@@ -585,7 +639,7 @@ async function load(){
     if(!r.ok) throw new Error(r.status);
     const d = await r.json();
     S.suppliers = (d.suppliers||[]).map(x => norm(x.id, x));
-    S.meta = d.meta || {updated:d.updated};
+    S.meta = d.meta || {updated:d.updated}; S.bench = d.benchmark || (d.meta && d.meta.benchmark) || null;
     S.log = d.log || []; S.inst = d.instructions || []; S.loadFail = false;
   }catch(e){ if(S.suppliers === null) S.suppliers = []; S.loadFail = true; }
   render();
