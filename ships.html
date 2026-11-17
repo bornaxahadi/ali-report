@@ -395,7 +395,7 @@ const T = {
   broNote:"Numbers are copied from the listings.",ships_n:"ships",foot:"Last update shown at the top",
   tabHome:"Home",tabPick:"Top picks",tabShip:"Ships",tabBro:"Contacts",tabCav:"Notes",why:"Why",loadFail:"The report did not load. Reload the page."}
 };
-const COUNTRIES={RU:{fa:"روسیه",en:"Russia"},AE:{fa:"امارات (دبی)",en:"UAE (Dubai)"},TR:{fa:"ترکیه",en:"Türkiye"},DE:{fa:"آلمان",en:"Germany"},PL:{fa:"لهستان",en:"Poland"},GR:{fa:"یونان",en:"Greece"},IR:{fa:"ایران",en:"Iran"}};
+const COUNTRIES={RU:{fa:"روسیه",en:"Russia"},AE:{fa:"امارات (دبی)",en:"UAE (Dubai)"},TR:{fa:"ترکیه",en:"Türkiye"},DE:{fa:"آلمان",en:"Germany"},PL:{fa:"لهستان",en:"Poland"},GR:{fa:"یونان",en:"Greece"},IR:{fa:"ایران",en:"Iran"},KZ:{fa:"قزاقستان",en:"Kazakhstan"}};
 const STAR=(cx,cy,r,rot=0)=>{let p="";for(let i=0;i<10;i++){const a=(Math.PI/5)*i-Math.PI/2+rot,rr=i%2?r*.4:r;p+=(i?"L":"M")+(cx+rr*Math.cos(a)).toFixed(2)+" "+(cy+rr*Math.sin(a)).toFixed(2);}return p+"z";};
 const FLAGS={
  AE:`<rect width="30" height="20" fill="#fff"/><rect width="30" height="6.67" fill="#00732F"/><rect y="13.33" width="30" height="6.67" fill="#000"/><rect width="8" height="20" fill="#FF0000"/>`,
@@ -404,6 +404,8 @@ const FLAGS={
  DE:`<rect width="30" height="20" fill="#FFCE00"/><rect width="30" height="13.33" fill="#DD0000"/><rect width="30" height="6.67" fill="#000"/>`,
  PL:`<rect width="30" height="20" fill="#DC143C"/><rect width="30" height="10" fill="#fff"/>`,
  GR:`<rect width="30" height="20" fill="#0D5EAF"/><g fill="#fff"><rect y="2.2" width="30" height="2.2"/><rect y="6.7" width="30" height="2.2"/><rect y="11.1" width="30" height="2.2"/><rect y="15.6" width="30" height="2.2"/></g><rect width="11.1" height="11.1" fill="#0D5EAF"/><rect x="4.4" width="2.2" height="11.1" fill="#fff"/><rect y="4.4" width="11.1" height="2.2" fill="#fff"/>`,
+
+ KZ:`<rect width="30" height="20" fill="#00AFCA"/><circle cx="15" cy="9" r="3.6" fill="#FEC50C"/><rect x="5" y="14.5" width="20" height="1.6" fill="#FEC50C"/>`,
  IR:`<rect width="30" height="20" fill="#fff"/><rect width="30" height="6.67" fill="#239F40"/><rect y="13.33" width="30" height="6.67" fill="#DA0000"/><circle cx="15" cy="10" r="2" fill="none" stroke="#DA0000" stroke-width=".9"/>`
 };
 const S={lang:"fa",filter:"all",open:new Set(),d:null,fail:false};
